@@ -31,6 +31,7 @@ jobs:
             ${{ runner.os }}-pip-
       - name: Ensure latest setuptools
         run: |
+          dir ~/.cache/pip
           python -m pip install --upgrade pip setuptools
       - name: Install dependencies
         run: |
