@@ -37,10 +37,10 @@ jobs:
           python -m pip install coverage tox tox-factor unittest-xml-reporting
       - name: Run tox
         run: |
-          pip freeze
           python -m pip --version
           python -m tox --version
           python -m tox -f py$(python --version 2>&1 | cut -c 8,10)
+          pip freeze
       - name: Coverage reporting
         run: |
           coverage combine
@@ -74,11 +74,10 @@ jobs:
           python -m pip install tox
       - name: Run tox
         run: |
-          pip freeze
           python -m pip --version
           python -m tox --version
           python -m tox -e isort,lint,docs
-
+          pip freeze
 
   warnings:
     runs-on: ubuntu-latest
@@ -100,10 +99,10 @@ jobs:
           python -m pip install --upgrade pip setuptools
       - name: Install dependencies
         run: |
-          pip freeze
           python -m pip install tox
       - name: Run tox
         run: |
           python -m pip --version
           python -m tox --version
           python -m tox -e warnings
+          pip freeze
