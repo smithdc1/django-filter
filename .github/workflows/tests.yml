@@ -40,7 +40,7 @@ jobs:
         run: |
           python -m pip --version
           python -m tox --version
-          python -m tox -f py$(python --version 2>&1 | cut -c 8,10)
+          python -m tox -f py$(python --version 2>&1 | cut -c 8,10) -vv
           pip freeze
       - name: Coverage reporting
         run: |
@@ -105,5 +105,5 @@ jobs:
         run: |
           python -m pip --version
           python -m tox --version
-          python -m tox -e warnings
+          python -m tox -e warnings -vv
           pip freeze
