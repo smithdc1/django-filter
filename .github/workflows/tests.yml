@@ -30,7 +30,7 @@ jobs:
             .tox/
           key: ${{ env.pythonLocation}}-${{ runner.os }}-pip-${{ hashFiles('**/text-ci.txt', '**/tox.ini') }}
           restore-keys: |
-            ${{ runner.os }}-pip-
+            ${{ env.pythonLocation}}-${{ runner.os }}-pip-
       - name: ls show env.pythonLocation
         run: ls -R ${{ env.pythonLocation}}
       - name: Ensure latest setuptools
