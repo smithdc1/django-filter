@@ -35,7 +35,6 @@ jobs:
         run: ls -R ${{ env.pythonLocation}}
       - name: Ensure latest setuptools
         run: |
-          dir -R
           python -m pip install --upgrade pip setuptools
       - name: Install dependencies
         run: |
@@ -46,7 +45,6 @@ jobs:
           python -m tox --version
           python -m tox -f py$(python --version 2>&1 | cut -c 8,10) -vv
           pip freeze
-          dir -R
       - name: Coverage reporting
         run: |
           coverage combine
@@ -113,6 +111,4 @@ jobs:
           python -m pip --version
           python -m tox --version
           python -m tox -e warnings -vv
-          dir
-          dir .tox/
           pip freeze
