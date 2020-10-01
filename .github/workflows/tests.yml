@@ -35,7 +35,6 @@ jobs:
         run: ls -R ${{ env.pythonLocation}}
       - name: Ensure latest setuptools
         run: |
-          dir ~/.cache/pip -R
           dir -R
           python -m pip install --upgrade pip setuptools
       - name: Install dependencies
