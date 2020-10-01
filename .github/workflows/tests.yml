@@ -25,8 +25,10 @@ jobs:
       - uses: actions/cache@v2
         name: Configure pip caching
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/text-ci.txt', '**/tox.ini') }}
+          path: |
+            ~/.cache/pip
+            .tox/
+          key: ${{ env.pythonLocation}}-${{ runner.os }}-pip-${{ hashFiles('**/text-ci.txt', '**/tox.ini') }}
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: ls show env.pythonLocation
@@ -95,7 +97,9 @@ jobs:
       - uses: actions/cache@v2
         name: Configure pip caching
         with:
-          path: ~/.cache/pip
+          path: |
+            ~/.cache/pip
+            .tox/
           key: ${{ runner.os }}-pip-${{ hashFiles('**/text-ci.txt', '**/tox.ini') }}
           restore-keys: |
             ${{ runner.os }}-pip-
