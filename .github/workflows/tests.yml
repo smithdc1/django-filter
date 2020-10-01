@@ -27,7 +27,6 @@ jobs:
         with:
           path: |
             ~/.cache/pip
-            .tox/
           key: ${{ env.pythonLocation}}-${{ runner.os }}-pip-${{ hashFiles('**/text-ci.txt', '**/tox.ini') }}
           restore-keys: |
             ${{ env.pythonLocation}}-${{ runner.os }}-pip-
